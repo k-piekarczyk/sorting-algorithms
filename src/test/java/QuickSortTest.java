@@ -1,12 +1,12 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-class SelectSortTest {
+class QuickSortTest {
 
     @Test
     void sort() {
-        SorterInterface sorter = new SelectSort();
+        SorterInterface sorter = new QuickSort();
 
         double[] input = {2.1, 3.1, 6.1, 1.1, 9.1};
         double[] output = sorter.sort(input);
@@ -15,10 +15,9 @@ class SelectSortTest {
         assertArrayEquals(correctOutput, output);
     }
 
-
     @Test
     void timeTest() {
-        SorterInterface sorter = new SelectSort();
+        SorterInterface sorter = new QuickSort();
         long start;
         long elapsed;
         long avg;
