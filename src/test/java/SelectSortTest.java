@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class SelectSortTest {
@@ -19,6 +21,7 @@ class SelectSortTest {
     @Test
     void timeTest() {
         SorterInterface sorter = new SelectSort();
+        Random random = new Random();
         long start;
         long elapsed;
         long avg;
@@ -27,7 +30,7 @@ class SelectSortTest {
         for (int i = 5000; i < 25000; i += 1000) {
             double [] input = new double[i];
             for (int j = 0; j < input.length; j++) {
-                input[j] = j;
+                input[j] = random.nextDouble();
             }
 
             elapsed = 0;

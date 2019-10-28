@@ -16,7 +16,7 @@ class QuickSortTest {
     }
 
     @Test
-    void timeTest() {
+    void timeTest_avgCase() {
         SorterInterface sorter = new QuickSort();
         long start;
         long elapsed;
