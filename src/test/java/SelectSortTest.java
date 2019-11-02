@@ -1,5 +1,10 @@
 import org.junit.jupiter.api.Test;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -26,6 +31,7 @@ class SelectSortTest {
         long elapsed;
         long avg;
         int attempts = 100;
+        List<long []> timeList = new ArrayList<>();
 
         for (int i = 5000; i < 25000; i += 1000) {
             double [] input = new double[i];
@@ -40,7 +46,17 @@ class SelectSortTest {
                 elapsed += System.nanoTime() - start;
             }
             avg = Math.floorDiv(elapsed, (long) attempts);
-            System.out.printf("%d\t%d%n", i, avg);
+
+            long[] pair = {i, avg};
+            timeList.add(pair);
         }
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("complexity/timeTest-selectSort.csv", false));
+            for (long[] pair : timeList) {
+                writer.write(String.format("%d\t%d%n", pair[0], pair[1]));
+            }
+            writer.close();
+        } catch (IOException ignored) {}
     }
 }
