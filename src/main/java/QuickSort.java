@@ -14,7 +14,6 @@ public class QuickSort implements SorterInterface {
             int endIndex = stack.pop();
             int startIndex = stack.pop();
 
-            // TODO: change for InSort when 10 or less elements in array
             if (endIndex - startIndex < 10) {
                 double[] almostSortedSub = Arrays.copyOfRange(output, startIndex, endIndex + 1);
                 double[] sortedSubarray = inSort.sort(almostSortedSub);
