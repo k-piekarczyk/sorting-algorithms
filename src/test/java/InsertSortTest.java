@@ -50,6 +50,7 @@ class InsertSortTest {
 
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("complexity/timeTest-insertSort-bestCase.csv", false));
+            writer.write(String.format("n\ttime [ns]%n"));
             for (long[] pair : timeList) {
                 writer.write(String.format("%d\t%d%n", pair[0], pair[1]));
             }
@@ -86,6 +87,7 @@ class InsertSortTest {
 
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("complexity/timeTest-insertSort-worstCase.csv", false));
+            writer.write(String.format("n\ttime [ns]%n"));
             for (long[] pair : timeList) {
                 writer.write(String.format("%d\t%d%n", pair[0], pair[1]));
             }

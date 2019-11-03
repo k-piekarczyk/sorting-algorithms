@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -50,6 +51,7 @@ class QuickSortTest {
 
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("complexity/timeTest-quickSort-bestCase.csv", false));
+            writer.write(String.format("n\ttime [ns]%n"));
             for (long[] pair : timeList) {
                 writer.write(String.format("%d\t%d%n", pair[0], pair[1]));
             }
@@ -68,9 +70,7 @@ class QuickSortTest {
 
         for (int i = 5000; i < 25000; i += 1000) {
             double [] input = new double[i];
-            for (int j = 0; j < input.length; j++) {
-                input[j] = j;
-            }
+            Arrays.fill(input, 1);
 
             elapsed = 0;
             for (int k = 0; k < attempts; k++) {
@@ -86,6 +86,7 @@ class QuickSortTest {
 
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("complexity/timeTest-quickSort-worstCase.csv", false));
+            writer.write(String.format("n\ttime [ns]%n"));
             for (long[] pair : timeList) {
                 writer.write(String.format("%d\t%d%n", pair[0], pair[1]));
             }
