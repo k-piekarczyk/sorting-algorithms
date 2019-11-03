@@ -27,10 +27,11 @@ class InsertSortTest {
         long start;
         long elapsed;
         long avg;
-        int attempts = 100;
+        int attempts = 15;
+        int maxN = 100000;
         List<long []> timeList = new ArrayList<>();
 
-        for (int i = 5000; i < 25000; i += 1000) {
+        for (int i = 5000; i <= maxN; i += 1000) {
             double [] input = new double[i];
             for (int j = 0; j < input.length; j++) {
                 input[j] = j;
@@ -64,10 +65,11 @@ class InsertSortTest {
         long start;
         long elapsed;
         long avg;
-        int attempts = 100;
+        int attempts = 15;
+        int maxN = 100000;
         List<long []> timeList = new ArrayList<>();
 
-        for (int i = 5000; i < 25000; i += 1000) {
+        for (int i = 5000; i <= maxN; i += 1000) {
             double [] input = new double[i];
             for (int j = 0; j < input.length; j++) {
                 input[j] = input.length - j;
