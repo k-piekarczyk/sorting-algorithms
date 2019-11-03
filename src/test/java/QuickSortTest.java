@@ -22,7 +22,7 @@ class QuickSortTest {
     }
 
     @Test
-    void timeTest_avgCase() {
+    void timeTest_bestCase() {
         SorterInterface sorter = new QuickSort();
         long start;
         long elapsed;
@@ -49,7 +49,43 @@ class QuickSortTest {
         }
 
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("complexity/timeTest-quickSort-avgCase.csv", false));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("complexity/timeTest-quickSort-bestCase.csv", false));
+            for (long[] pair : timeList) {
+                writer.write(String.format("%d\t%d%n", pair[0], pair[1]));
+            }
+            writer.close();
+        } catch (IOException ignored) {}
+    }
+
+    @Test
+    void timeTest_worstCase() {
+        SorterInterface sorter = new QuickSort();
+        long start;
+        long elapsed;
+        long avg;
+        int attempts = 100;
+        List<long []> timeList = new ArrayList<>();
+
+        for (int i = 5000; i < 25000; i += 1000) {
+            double [] input = new double[i];
+            for (int j = 0; j < input.length; j++) {
+                input[j] = j;
+            }
+
+            elapsed = 0;
+            for (int k = 0; k < attempts; k++) {
+                start = System.nanoTime();
+                sorter.sort(input);
+                elapsed += System.nanoTime() - start;
+            }
+            avg = Math.floorDiv(elapsed, (long) attempts);
+
+            long[] pair = {i, avg};
+            timeList.add(pair);
+        }
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("complexity/timeTest-quickSort-worstCase.csv", false));
             for (long[] pair : timeList) {
                 writer.write(String.format("%d\t%d%n", pair[0], pair[1]));
             }

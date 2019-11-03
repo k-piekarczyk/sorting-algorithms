@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -51,43 +50,6 @@ class InsertSortTest {
 
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("complexity/timeTest-insertSort-bestCase.csv", false));
-            for (long[] pair : timeList) {
-                writer.write(String.format("%d\t%d%n", pair[0], pair[1]));
-            }
-            writer.close();
-        } catch (IOException ignored) {}
-    }
-
-    @Test
-    void timeTest_avgCase() {
-        SorterInterface sorter = new InsertSort();
-        Random random = new Random();
-        long start;
-        long elapsed;
-        long avg;
-        int attempts = 100;
-        List<long []> timeList = new ArrayList<>();
-
-        for (int i = 5000; i < 25000; i += 1000) {
-            double [] input = new double[i];
-            for (int j = 0; j < input.length; j++) {
-                input[j] = random.nextDouble();
-            }
-
-            elapsed = 0;
-            for (int k = 0; k < attempts; k++) {
-                start = System.nanoTime();
-                sorter.sort(input);
-                elapsed += System.nanoTime() - start;
-            }
-            avg = Math.floorDiv(elapsed, (long) attempts);
-
-            long[] pair = {i, avg};
-            timeList.add(pair);
-        }
-
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("complexity/timeTest-insertSort-avgCase.csv", false));
             for (long[] pair : timeList) {
                 writer.write(String.format("%d\t%d%n", pair[0], pair[1]));
             }
