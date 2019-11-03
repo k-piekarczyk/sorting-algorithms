@@ -15,9 +15,9 @@ class SelectionSortTest {
     void sort() {
         SorterInterface sorter = new SelectionSort();
 
-        double[] input = {2.1, 3.1, 6.1, 1.1, 9.1};
+        double[] input = {1.7, 9.5, 1.2, 0.6, 5.3, 8.2, 3.5, 4.8, 3.4, 0.3, 9.8, 8.3, 9.7, 2.5, 8.4};
         double[] output = sorter.sort(input);
-        double[] correctOutput = {1.1, 2.1, 3.1, 6.1, 9.1};
+        double[] correctOutput = {0.3, 0.6, 1.2, 1.7, 2.5, 3.4, 3.5, 4.8, 5.3, 8.2, 8.3, 8.4, 9.5, 9.7, 9.8};
 
         assertArrayEquals(correctOutput, output);
     }

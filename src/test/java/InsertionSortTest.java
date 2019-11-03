@@ -14,9 +14,9 @@ class InsertionSortTest {
     void sort() {
         SorterInterface sorter = new InsertionSort();
 
-        double[] input = {2.1, 3.1, 6.1, 1.1, 9.1};
+        double[] input = {8.9, 8.9, 8.2, 3.7, 2.9, 9.3, 4.3, 2.1, 6.0, 2.3, 6.2, 2.3, 6.3, 0.3, 5.5};
         double[] output = sorter.sort(input);
-        double[] correctOutput = {1.1, 2.1, 3.1, 6.1, 9.1};
+        double[] correctOutput = {0.3, 2.1, 2.3, 2.3, 2.9, 3.7, 4.3, 5.5, 6.0, 6.2, 6.3, 8.2, 8.9, 8.9, 9.3};
 
         assertArrayEquals(correctOutput, output);
     }

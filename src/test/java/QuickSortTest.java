@@ -15,9 +15,9 @@ class QuickSortTest {
     void sort() {
         SorterInterface sorter = new QuickSort();
 
-        double[] input = {2.1, 3.1, 6.1, 1.1, 9.1};
+        double[] input = {8.3, 2.4, 8.6, 8.1, 5.3, 9.3, 2.2, 6.8, 5.9, 4.2, 8.9, 8.1, 4.8, 3.1, 4.2};
         double[] output = sorter.sort(input);
-        double[] correctOutput = {1.1, 2.1, 3.1, 6.1, 9.1};
+        double[] correctOutput = {2.2, 2.4, 3.1, 4.2, 4.2, 4.8, 5.3, 5.9, 6.8, 8.1, 8.1, 8.3, 8.6, 8.9, 9.3};
 
         assertArrayEquals(correctOutput, output);
     }
