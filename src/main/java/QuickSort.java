@@ -4,6 +4,7 @@ public class QuickSort implements SorterInterface {
     @Override
     public double[] sort(double[] source) {
         SorterInterface inSort = new InsertSort();
+        int inSortLengthThreshold = 10;
         double[] output = source.clone();
 
         Stack<Integer> stack = new Stack<>();
@@ -14,7 +15,7 @@ public class QuickSort implements SorterInterface {
             int endIndex = stack.pop();
             int startIndex = stack.pop();
 
-            if (endIndex - startIndex < 10) {
+            if (endIndex - startIndex < inSortLengthThreshold) {
                 double[] almostSortedSub = Arrays.copyOfRange(output, startIndex, endIndex + 1);
                 double[] sortedSubarray = inSort.sort(almostSortedSub);
 
