@@ -9,11 +9,11 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class SelectSortTest {
+class SelectionSortTest {
 
     @Test
     void sort() {
-        SorterInterface sorter = new SelectSort();
+        SorterInterface sorter = new SelectionSort();
 
         double[] input = {2.1, 3.1, 6.1, 1.1, 9.1};
         double[] output = sorter.sort(input);
@@ -25,7 +25,7 @@ class SelectSortTest {
 
     @Test
     void timeTest() {
-        SorterInterface sorter = new SelectSort();
+        SorterInterface sorter = new SelectionSort();
         Random random = new Random();
         long start;
         long elapsed;

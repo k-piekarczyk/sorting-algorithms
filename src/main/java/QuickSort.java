@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class QuickSort implements SorterInterface {
     @Override
     public double[] sort(double[] source) {
-        SorterInterface inSort = new InsertSort();
+        SorterInterface inSort = new InsertionSort();
         int inSortLengthThreshold = 10;
         double[] output = source.clone();
 

@@ -8,11 +8,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InsertSortTest {
+class InsertionSortTest {
 
     @Test
     void sort() {
-        SorterInterface sorter = new InsertSort();
+        SorterInterface sorter = new InsertionSort();
 
         double[] input = {2.1, 3.1, 6.1, 1.1, 9.1};
         double[] output = sorter.sort(input);
@@ -23,7 +23,7 @@ class InsertSortTest {
 
     @Test
     void timeTest_bestCase() {
-        SorterInterface sorter = new InsertSort();
+        SorterInterface sorter = new InsertionSort();
         long start;
         long elapsed;
         long avg;
@@ -61,7 +61,7 @@ class InsertSortTest {
 
     @Test
     void timeTest_worstCase() {
-        SorterInterface sorter = new InsertSort();
+        SorterInterface sorter = new InsertionSort();
         long start;
         long elapsed;
         long avg;

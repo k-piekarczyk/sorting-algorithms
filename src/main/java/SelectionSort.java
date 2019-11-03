@@ -1,4 +1,4 @@
-public class SelectSort implements SorterInterface {
+public class SelectionSort implements SorterInterface {
     @Override
     public double[] sort(double[] source) {
         double[] output = source.clone();
