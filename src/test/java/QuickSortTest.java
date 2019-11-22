@@ -20,6 +20,7 @@ class QuickSortTest {
         double[] correctOutput = {2.2, 2.4, 3.1, 4.2, 4.2, 4.8, 5.3, 5.9, 6.8, 8.1, 8.1, 8.3, 8.6, 8.9, 9.3};
 
         assertArrayEquals(correctOutput, output);
+        assertThrows(NullArrayException.class, () -> sorter.sort(null));
     }
 
     @Test

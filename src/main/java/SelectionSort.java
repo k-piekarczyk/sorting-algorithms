@@ -1,6 +1,8 @@
 public class SelectionSort implements SorterInterface {
     @Override
     public double[] sort(double[] source) {
+        if (source == null) throw new NullArrayException();
+
         double[] output = source.clone();
         int n = output.length;
 

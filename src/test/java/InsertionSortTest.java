@@ -19,6 +19,8 @@ class InsertionSortTest {
         double[] correctOutput = {0.3, 2.1, 2.3, 2.3, 2.9, 3.7, 4.3, 5.5, 6.0, 6.2, 6.3, 8.2, 8.9, 8.9, 9.3};
 
         assertArrayEquals(correctOutput, output);
+
+        assertThrows(NullArrayException.class, () -> sorter.sort(null));
     }
 
     @Test

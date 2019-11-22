@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class SelectionSortTest {
 
@@ -20,6 +21,7 @@ class SelectionSortTest {
         double[] correctOutput = {0.3, 0.6, 1.2, 1.7, 2.5, 3.4, 3.5, 4.8, 5.3, 8.2, 8.3, 8.4, 9.5, 9.7, 9.8};
 
         assertArrayEquals(correctOutput, output);
+        assertThrows(NullArrayException.class, () -> sorter.sort(null));
     }
 
 
